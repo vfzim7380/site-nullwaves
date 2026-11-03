@@ -99,6 +99,7 @@ h3{font-size:1.35rem;letter-spacing:-.015em}
 .screen-bar i{width:9px;height:9px;border-radius:50%;background:var(--lilac)}
 .screen img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top}
 .missing{padding:2rem;text-align:center;font-size:.92rem;opacity:.7;aspect-ratio:16/9;display:grid;place-items:center}
+.missing[hidden],.screen img[hidden]{display:none}
 /* Sobre */
 .about{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,6vw,6rem)}
 .about p:not(.lead){opacity:.88;max-width:50ch}
