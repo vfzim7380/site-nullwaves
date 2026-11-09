@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nullwaves Systems — Tecnologia para transformar o que é possível</title>
-<meta name="description" content="A Nullwaves Systems desenvolve soluções digitais inteligentes que conectam pessoas, processos e possibilidades. Conheça o Nullwaves Prontuário e a NIXIE.IA.">
+<title>Nullwaves Systems — Empresa de desenvolvimento de software</title>
+<meta name="description" content="A Nullwaves Systems é uma empresa de desenvolvimento de software que transforma ideias e necessidades em soluções tecnológicas. Conheça o Nullwaves Prontuário e a NIXIE.IA.">
+<meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nullwaves Systems">
-<meta property="og:description" content="Soluções digitais inteligentes que conectam pessoas, processos e possibilidades.">
+<meta property="og:site_name" content="Nullwaves Systems">
+<meta property="og:title" content="Nullwaves Systems — Empresa de desenvolvimento de software">
+<meta property="og:description" content="Desenvolvemos softwares e soluções tecnológicas que simplificam processos, conectam pessoas e transformam desafios em novas possibilidades.">
 <meta property="og:locale" content="pt_BR">
+<!-- PREENCHER quando o domínio estiver definido: <meta property="og:url" content="..."> e <meta property="og:image" content="URL absoluta de uma imagem 1200x630"> -->
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#48217b">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Nullwaves Systems","description":"Empresa de desenvolvimento de software que transforma ideias e necessidades em soluções tecnológicas.","email":"contato@nullwaves.systems"}</script>
 <script>try{var t=localStorage.getItem("nw-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%2348217b'/%3E%3Cpath d='M5 24C10 12 14 12 20 20C26 28 30 28 35 16' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,9 +34,11 @@
       <span class="logo-text"><span class="brand-name">NULL<i>WAVES</i></span><span class="brand-sub">SYSTEMS</span></span>
     </a>
     <div class="botoes" id="menu">
-      <a href="#inicio">Início</a><a href="#visao">Nossa visão</a><a href="#desenvolvemos">O que desenvolvemos</a><a href="#solucoes">Soluções</a><a href="#sobre">Sobre</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a>
+      <a href="#inicio">Início</a><a href="#visao">Nossa visão</a><a href="#desenvolvemos">O que fazemos</a><a href="#solucoes">Soluções</a><a href="#diferenciais">Diferenciais</a><a href="#como-trabalhamos">Como trabalhamos</a><a href="#sobre">Sobre nós</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a>
+      <a class="btn menu-cta" href="#solucoes">Conheça nossas soluções</a>
     </div>
     <div class="nav-end">
+      <a class="btn nav-cta" href="#solucoes">Conheça nossas soluções</a>
       <button class="theme-btn" type="button" aria-label="Alternar tema" data-theme-toggle><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark</span></button>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
     </div>
@@ -43,11 +50,11 @@
   <i class="orbit o1" aria-hidden="true"></i><i class="orbit o2" aria-hidden="true"></i>
   <div class="hero-in">
     <svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 38C15 18 22 18 32 32C42 46 49 46 58 26"/></svg>
-    <h1 class="brand-title">NULL<span>WAVES</span></h1>
-    <p class="brand-subtitle">SYSTEMS</p>
-    <p class="tag">Inovando o futuro da tecnologia</p>
-    <p class="hero-copy">Criamos soluções digitais inteligentes que conectam pessoas, processos e possibilidades.</p>
-    <div class="actions"><a class="btn" href="#sobre">Conheça a empresa</a><a class="btn btn-ghost" href="#solucoes">Nossas soluções</a></div>
+    <h1 class="brand-title">NULL<span>WAVES</span><span class="sr-only"> SYSTEMS</span></h1>
+    <p class="brand-subtitle" aria-hidden="true">SYSTEMS</p>
+    <p class="tag">Tecnologia que transforma possibilidades em soluções.</p>
+    <p class="hero-copy">Desenvolvemos softwares e soluções tecnológicas que simplificam processos, conectam pessoas e transformam desafios em novas possibilidades.</p>
+    <div class="actions"><a class="btn" href="#sobre">Conheça a empresa</a><a class="btn btn-ghost" href="#solucoes">Explore nossas soluções</a></div>
   </div>
   <a class="scroll" href="#visao" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v16M5.5 12.5 12 19l6.5-6.5"/></svg></a>
 </section>
@@ -56,9 +63,9 @@
   <div class="wrap narrow">
     <h2 id="t-visao" class="statement" data-words>Não desenvolvemos tecnologia apenas para acompanhar o futuro. Desenvolvemos para criar novas possibilidades.</h2>
     <div class="pillars">
-      <p><strong>Soluções para problemas reais.</strong> Partimos de desafios concretos do dia a dia para chegar a ferramentas úteis.</p>
-      <p><strong>Eficiência com criatividade.</strong> Engenharia e inovação a serviço de processos mais simples e conectados.</p>
-      <p><strong>Evolução contínua.</strong> Cada projeto nos ensina o suficiente para fazer o próximo melhor.</p>
+      <p><strong>Soluções para problemas reais.</strong> Partimos de desafios concretos do dia a dia para desenvolver ferramentas que resolvem necessidades de verdade.</p>
+      <p><strong>Tecnologia aplicada à eficiência.</strong> Engenharia e criatividade a serviço de processos mais simples, organizados e conectados.</p>
+      <p><strong>Inovação e evolução contínua.</strong> Cada projeto nos ensina o suficiente para fazer o próximo melhor.</p>
     </div>
   </div>
 </section>
@@ -67,10 +74,10 @@
   <div class="wrap">
     <h2 id="t-dev">O que desenvolvemos</h2>
     <div class="caps">
-      <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 14 7 24l10 10M31 14l10 10-10 10M27 10l-6 28"/></svg><h3>Desenvolvimento de software</h3><p>Aplicações web completas, do front-end ao back-end e banco de dados.</p></article>
-      <article><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="6"/><path d="M24 6v8M24 34v8M6 24h8M34 24h8M11 11l6 6M31 31l6 6M37 11l-6 6M17 31l-6 6"/></svg><h3>Inteligência artificial</h3><p>Assistentes que ajudam a acessar informações e apoiar a gestão, como a NIXIE.IA.</p></article>
-      <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14h20M8 24h32M8 34h14"/><circle cx="34" cy="14" r="4"/><circle cx="28" cy="34" r="4"/></svg><h3>Automação de processos</h3><p>Fluxos que tiram tarefas repetitivas do caminho e centralizam informações.</p></article>
-      <article><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="26" rx="3"/><path d="M18 41h12M24 35v6"/></svg><h3>Soluções digitais</h3><p>Sistemas pensados de ponta a ponta, com foco na rotina de quem os utiliza.</p></article>
+      <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 14 7 24l10 10M31 14l10 10-10 10M27 10l-6 28"/></svg><h3>Desenvolvimento de software</h3><p>Criação de sistemas, aplicações web e plataformas digitais, desde o planejamento até a implementação.</p></article>
+      <article><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="6"/><path d="M24 6v8M24 34v8M6 24h8M34 24h8M11 11l6 6M31 31l6 6M37 11l-6 6M17 31l-6 6"/></svg><h3>Inteligência artificial</h3><p>Desenvolvimento e integração de tecnologias inteligentes para otimizar processos e facilitar o acesso à informação.</p></article>
+      <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14h20M8 24h32M8 34h14"/><circle cx="34" cy="14" r="4"/><circle cx="28" cy="34" r="4"/></svg><h3>Automação de processos</h3><p>Soluções que simplificam atividades, reduzem tarefas repetitivas e melhoram a eficiência operacional.</p></article>
+      <article><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="26" rx="3"/><path d="M18 41h12M24 35v6"/></svg><h3>Integração de sistemas</h3><p>Conexão entre plataformas, ferramentas e fontes de informação para criar ambientes tecnológicos mais integrados.</p></article>
     </div>
   </div>
 </section>
@@ -78,25 +85,33 @@
 <section class="sec light" id="solucoes" aria-labelledby="t-sol">
   <div class="wrap">
     <h2 id="t-sol">Nossas soluções</h2>
-    <p class="sub">Projetos que demonstram, na prática, o que a Nullwaves constrói.</p>
+    <p class="sub">Produtos desenvolvidos pela Nullwaves Systems que mostram, na prática, o que a empresa constrói.</p>
 
     <article class="product" aria-labelledby="p1">
       <div class="product-text">
         <h3 id="p1">Nullwaves Prontuário</h3>
         <p>Uma plataforma de gestão clínica desenvolvida para simplificar a organização de clínicas e consultórios, centralizando informações e facilitando a rotina dos profissionais.</p>
+        <ul class="benefits">
+          <li>Informações centralizadas em um único ambiente</li>
+          <li>Agenda, pacientes e registros organizados</li>
+          <li>Financeiro e mensagens na mesma plataforma</li>
+          <li>Assistente inteligente integrada: a NIXIE.IA</li>
+        </ul>
         <div class="tabs" role="tablist" aria-label="Telas do Nullwaves Prontuário">
-          <button role="tab" aria-selected="true" data-tab="dashboard">Dashboard</button>
-          <button role="tab" aria-selected="false" data-tab="calendario">Agenda</button>
-          <button role="tab" aria-selected="false" data-tab="pacientes">Pacientes</button>
-          <button role="tab" aria-selected="false" data-tab="anotacoes">Anotações e registros</button>
-          <button role="tab" aria-selected="false" data-tab="prontuario">Prontuário</button>
-          <button role="tab" aria-selected="false" data-tab="financeiro">Financeiro</button>
-          <button role="tab" aria-selected="false" data-tab="mensagens">Mensagens</button>
+          <button role="tab" id="tab-dashboard" aria-selected="true" aria-controls="screen-pront" tabindex="0" data-tab="dashboard">Dashboard</button>
+          <button role="tab" id="tab-calendario" aria-selected="false" aria-controls="screen-pront" tabindex="-1" data-tab="calendario">Agenda</button>
+          <button role="tab" id="tab-pacientes" aria-selected="false" aria-controls="screen-pront" tabindex="-1" data-tab="pacientes">Pacientes</button>
+          <button role="tab" id="tab-anotacoes" aria-selected="false" aria-controls="screen-pront" tabindex="-1" data-tab="anotacoes">Anotações e registros</button>
+          <button role="tab" id="tab-prontuario" aria-selected="false" aria-controls="screen-pront" tabindex="-1" data-tab="prontuario">Prontuário</button>
+          <button role="tab" id="tab-financeiro" aria-selected="false" aria-controls="screen-pront" tabindex="-1" data-tab="financeiro">Financeiro</button>
+          <button role="tab" id="tab-mensagens" aria-selected="false" aria-controls="screen-pront" tabindex="-1" data-tab="mensagens">Mensagens</button>
         </div>
+        <!-- URL da página comercial: configure em script.js (NW_LINKS.prontuario). Enquanto estiver vazia, o botão fica desativado. -->
+        <div class="actions"><a class="btn" href="#contato" data-link="prontuario" data-fallback="disable">Conhecer o produto</a></div>
       </div>
-      <div class="screen" data-screen>
+      <div class="screen" data-screen id="screen-pront" role="tabpanel" aria-labelledby="tab-dashboard">
         <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-        <img src="assets/img/dashboard.png" alt="Dashboard do Nullwaves Prontuário" width="1600" height="900" loading="lazy" data-shot>
+        <img src="assets/img/dashboard.png" alt="Dashboard do Nullwaves Prontuário" width="1600" height="900" loading="lazy" decoding="async" data-shot>
         <p class="missing" hidden>Adicione <code></code> para exibir esta tela.</p>
       </div>
     </article>
@@ -104,28 +119,59 @@
     <article class="product flip" aria-labelledby="p2">
       <div class="product-text">
         <h3 id="p2">NIXIE.IA</h3>
-        <p>Uma assistente inteligente integrada ao ecossistema clínico, desenvolvida para facilitar o acesso a informações e auxiliar na gestão de processos.</p>
+        <p>A NIXIE.IA é a assistente inteligente desenvolvida pela Nullwaves Systems e integrada ao ecossistema clínico do Nullwaves Prontuário. Ela facilita o acesso a informações e auxilia na gestão de processos, dentro da mesma plataforma em que a equipe já trabalha.</p>
+        <!-- Opcional: URL da página da NIXIE.IA / integração ao produto em script.js (NW_LINKS.nixie). Vazia = o botão não aparece. -->
+        <div class="actions"><a class="btn" href="#solucoes" data-link="nixie" data-fallback="hide" hidden>Conhecer a integração</a></div>
       </div>
       <div class="screen">
         <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-        <img src="assets/img/nixie.png" alt="Interface da NIXIE.IA" width="1600" height="900" loading="lazy" data-shot data-static>
+        <img src="assets/img/nixie.png" alt="Interface da NIXIE.IA, assistente inteligente integrada ao Nullwaves Prontuário" width="1600" height="900" loading="lazy" decoding="async" data-shot data-static>
         <p class="missing" hidden>Adicione <code></code> para exibir esta tela.</p>
       </div>
     </article>
   </div>
 </section>
 
+<section class="sec deep" id="diferenciais" aria-labelledby="t-dif">
+  <div class="wrap">
+    <h2 id="t-dif">Por que desenvolver com a Nullwaves?</h2>
+    <div class="caps">
+      <article><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="8"/><path d="M24 24 38 10"/></svg><h3>Soluções para problemas reais</h3><p>Cada projeto começa pela compreensão de uma necessidade e pela busca de uma solução eficiente.</p></article>
+      <article><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="16" r="6"/><circle cx="33" cy="19" r="5"/><path d="M6 38c1-8 6-12 11-12s10 4 11 12M29 28c5-1 11 2 13 10"/></svg><h3>Tecnologia centrada nas pessoas</h3><p>Desenvolvemos pensando na experiência e nas necessidades de quem utiliza nossas soluções.</p></article>
+      <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M37 11l-4 4M15 33l-4 4"/><circle cx="24" cy="24" r="6"/></svg><h3>Inovação contínua</h3><p>Exploramos tecnologias e abordagens modernas para criar soluções relevantes.</p></article>
+      <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 8 12v11c0 10 7 16 16 19 9-3 16-9 16-19V12L24 6Z"/><path d="m17 24 5 5 9-10"/></svg><h3>Qualidade e eficiência</h3><p>Buscamos desenvolver softwares organizados, funcionais e preparados para evoluir.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec light" id="como-trabalhamos" aria-labelledby="t-como"><i class="orbit o4" aria-hidden="true"></i>
+  <div class="wrap">
+    <h2 id="t-como">Como trabalhamos</h2>
+    <p class="sub">Um caminho claro, da compreensão do problema à evolução da solução.</p>
+    <div class="steps-wrap">
+      <i class="steps-line" aria-hidden="true"><b></b></i>
+      <ol class="steps">
+        <li><span class="num" aria-hidden="true">1</span><h3>Identificação do problema</h3><p>Compreender as necessidades e os desafios envolvidos.</p></li>
+        <li><span class="num" aria-hidden="true">2</span><h3>Planejamento</h3><p>Definir objetivos, funcionalidades e estrutura da solução.</p></li>
+        <li><span class="num" aria-hidden="true">3</span><h3>Desenvolvimento</h3><p>Transformar o planejamento em uma solução tecnológica funcional.</p></li>
+        <li><span class="num" aria-hidden="true">4</span><h3>Testes e validação</h3><p>Avaliar o funcionamento, a qualidade e a experiência de utilização.</p></li>
+        <li><span class="num" aria-hidden="true">5</span><h3>Evolução contínua</h3><p>Aprimorar as soluções de acordo com novas necessidades e oportunidades.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section class="sec grad" id="sobre" aria-labelledby="t-sobre"><i class="orbit o3" aria-hidden="true"></i>
   <div class="wrap about">
     <div>
-      <h2 id="t-sobre">Unimos criatividade, engenharia e inovação.</h2>
-      <p class="lead">A Nullwaves Systems é uma empresa de tecnologia dedicada ao desenvolvimento de soluções digitais que simplificam processos e transformam desafios em oportunidades.</p>
-      <p>Construímos ferramentas que tornam o cotidiano mais eficiente, conectado e inteligente.</p>
+      <h2 id="t-sobre">Unimos engenharia, criatividade e inovação.</h2>
+      <p class="lead">A Nullwaves Systems é uma empresa de desenvolvimento de software que busca transformar ideias e necessidades em soluções tecnológicas.</p>
+      <p>Valorizamos a engenharia, a criatividade, a inovação, a qualidade e a evolução, e queremos construir uma empresa de tecnologia com atuação internacional no futuro.</p>
     </div>
     <dl class="mvv">
-      <div><dt>Missão</dt><dd>Desenvolver soluções tecnológicas que simplifiquem processos e ampliem possibilidades.</dd></div>
-      <div><dt>Visão</dt><dd>Construir soluções digitais relevantes, evoluindo continuamente por meio da tecnologia e da inovação.</dd></div>
-      <div><dt>Valores</dt><dd>Inovação · Criatividade · Eficiência · Responsabilidade · Evolução contínua</dd></div>
+      <div><dt>Missão</dt><dd>Desenvolver soluções tecnológicas de qualidade que simplifiquem processos, resolvam problemas reais e ampliem possibilidades.</dd></div>
+      <div><dt>Visão</dt><dd>Tornar-se uma empresa de tecnologia reconhecida internacionalmente pela qualidade, inovação e impacto de suas soluções.</dd></div>
+      <div><dt>Valores</dt><dd>Inovação · Qualidade · Eficiência · Evolução</dd></div>
     </dl>
   </div>
 </section>
@@ -134,11 +180,19 @@
   <div class="wrap">
     <h2 id="t-eq">Uma visão compartilhada. Diferentes habilidades. Um propósito em comum.</h2>
     <ul class="team">
-      <!-- PREENCHER: adicione <img src="assets/img/equipe/nome.jpg" alt="Nome"> no lugar das iniciais, a função e um link profissional (<a>) em cada integrante. -->
+      <!-- PREENCHER: para adicionar foto, troque <span class="avatar"> por <img src="assets/img/equipe/nome.jpg" alt="Nome do integrante" width="800" height="600" loading="lazy">. -->
       <li><span class="avatar" aria-hidden="true">HR</span><h3>Heitor Augusto Roque Paulista</h3><p>Desenvolvedor Back-end</p></li>
       <li><span class="avatar" aria-hidden="true">LC</span><h3>Lucas Carneiro Jacomelli</h3><p>Coordenador do Projeto</p></li>
       <li><span class="avatar" aria-hidden="true">VF</span><h3>Vinícios de Faria</h3><p>Desenvolvedor Front-end</p></li>
     </ul>
+  </div>
+</section>
+
+<section class="sec grad cta" id="chamada" aria-labelledby="t-cta"><i class="orbit o3" aria-hidden="true"></i><i class="orbit o2" aria-hidden="true"></i>
+  <div class="wrap">
+    <h2 id="t-cta">Vamos transformar ideias em soluções?</h2>
+    <p class="lead">Estamos sempre em busca de novos desafios, oportunidades e parcerias. Entre em contato e descubra o que podemos desenvolver juntos.</p>
+    <div class="actions"><a class="btn btn-ghost" href="#contato">Entre em contato</a></div>
   </div>
 </section>
 
@@ -150,13 +204,16 @@
       <p><a class="mail" href="mailto:contato@nullwaves.systems">contato@nullwaves.systems</a></p>
     </div>
     <form data-form novalidate>
-      <label>Nome<input name="nome" autocomplete="name" required></label>
-      <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+      <div class="row2">
+        <label>Nome<input name="nome" autocomplete="name" required></label>
+        <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+      </div>
       <label>Assunto
         <select name="assunto"><option>Ideia ou projeto</option><option>Parceria</option><option>Oportunidade</option><option>Outro</option></select>
       </label>
-      <label>Mensagem<textarea name="msg" rows="4" required></textarea></label>
+      <label>Mensagem<textarea name="msg" rows="5" required></textarea></label>
       <button class="btn" type="submit">Enviar mensagem</button>
+      <p class="form-hint">Ao enviar, abriremos o seu aplicativo de e-mail com a mensagem preenchida. O envio é finalizado por lá.</p>
       <p class="form-note" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -166,10 +223,11 @@
 <footer class="footer">
   <div class="wrap foot">
     <div><a class="brand" href="#inicio"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 24C9 12 14 12 20 20C26 28 31 28 36 16"/></svg><span>NULLWAVES <em>Systems</em></span></a>
-      <p>Tecnologia que conecta pessoas, processos e possibilidades.</p></div>
-    <nav aria-label="Navegação do rodapé"><a href="#visao">Visão</a><a href="#desenvolvemos">O que desenvolvemos</a><a href="#sobre">Sobre</a><a href="#equipe">Equipe</a></nav>
-    <nav aria-label="Soluções"><a href="#solucoes">Nullwaves Prontuário</a><a href="#solucoes">NIXIE.IA</a></nav>
-    <div><a href="mailto:contato@nullwaves.systems">contato@nullwaves.systems</a></div>
+      <p>Empresa de desenvolvimento de software. Tecnologia que transforma possibilidades em soluções.</p></div>
+    <nav aria-label="Empresa"><h3 class="foot-title">Empresa</h3><a href="#sobre">Sobre nós</a><a href="#visao">Nossa visão</a><a href="#como-trabalhamos">Como trabalhamos</a><a href="#equipe">Equipe</a></nav>
+    <nav aria-label="Soluções"><h3 class="foot-title">Soluções</h3><a href="#solucoes">Nullwaves Prontuário</a><a href="#solucoes">NIXIE.IA</a><a href="#" data-link="prontuario" data-fallback="hide" hidden>Página do Nullwaves Prontuário</a></nav>
+    <nav aria-label="Navegação"><h3 class="foot-title">Navegação</h3><a href="#inicio">Início</a><a href="#desenvolvemos">O que fazemos</a><a href="#diferenciais">Diferenciais</a><a href="#contato">Contato</a></nav>
+    <div class="foot-contact"><h3 class="foot-title">Contato</h3><a href="mailto:contato@nullwaves.systems">contato@nullwaves.systems</a><a href="#contato">Envie uma mensagem</a></div>
   </div>
   <p class="wrap copy">© <span data-year>2026</span> Nullwaves Systems. Todos os direitos reservados.</p>
 </footer>

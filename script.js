@@ -1,3 +1,13 @@
+/* ===== CONFIGURAÇÃO DE LINKS =====
+ * Informe aqui as URLs definitivas (páginas comerciais são projetos separados deste site).
+ * PRECISA SER PREENCHIDO: prontuario -> página comercial do Nullwaves Prontuário.
+ *   Enquanto vazio, o botão "Conhecer o produto" fica desativado e o link do rodapé não aparece.
+ * OPCIONAL: nixie -> página da NIXIE.IA / integração ao produto. Vazio = botão oculto. */
+const NW_LINKS = {
+  prontuario: '', // ex.: 'https://...'  <- URL a ser fornecida
+  nixie: ''       // ex.: 'https://...'  (somente se existir página específica)
+};
+
 (() => {
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
@@ -5,6 +15,18 @@
 
   // Rodapé: ano
   $('[data-year]').textContent = new Date().getFullYear();
+
+  // Links configuráveis (produtos)
+  $$('[data-link]').forEach(a => {
+    const url = (NW_LINKS[a.dataset.link] || '').trim();
+    if (url) { a.href = url; a.hidden = false; return; }
+    if (a.dataset.fallback === 'disable') {
+      a.setAttribute('aria-disabled', 'true'); a.removeAttribute('href'); a.setAttribute('role', 'link');
+      a.title = 'Página do produto indisponível no momento';
+      a.addEventListener('click', e => e.preventDefault());
+      console.warn(`[Nullwaves] Defina NW_LINKS.${a.dataset.link} em script.js para ativar o botão "${a.textContent.trim()}".`);
+    } else a.hidden = true;
+  });
 
   // Navegação
   const menu = $('#menu'), toggle = $('.nav-toggle');
@@ -26,6 +48,16 @@
     const open = menu.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open);
   });
+  const closeMenu = () => { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); };
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  addEventListener('resize', () => { if (innerWidth >= 1280) closeMenu(); });
+  document.addEventListener('click', e => { if (!e.target.closest('.navbar')) closeMenu(); });
+  // Destaque do item de menu da seção visível
+  const links = $$('a[href^="#"]:not(.btn)', menu).filter(a => $(a.getAttribute('href')));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) links.forEach(l => l.getAttribute('href') === '#' + en.target.id ? l.setAttribute('aria-current', 'true') : l.removeAttribute('aria-current')) }), { rootMargin: '-45% 0px -50% 0px' });
+    links.forEach(l => io.observe($(l.getAttribute('href'))));
+  }
   $$('a', menu).forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }));
 
   // Telas do produto: se a imagem não existir, mostra aviso em vez de ícone quebrado
@@ -41,23 +73,39 @@
 
   // Abas do Prontuário
   const shot = $('[data-screen] img'), note = $('[data-screen] .missing');
-  $$('.tabs [role=tab]').forEach(tab => tab.addEventListener('click', () => {
-    $$('.tabs [role=tab]').forEach(t => t.setAttribute('aria-selected', t === tab));
-    const name = tab.dataset.tab;
-    shot.hidden = false; note.hidden = true;
-    shot.src = `assets/img/${name}.png`;
-    shot.alt = `${tab.textContent} do Nullwaves Prontuário`;
-  }));
+  const tabs = $$('.tabs [role=tab]'), panel = $('#screen-pront');
+  const select = (tab, focus) => {
+    tabs.forEach(t => { const on = t === tab; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
+    panel.setAttribute('aria-labelledby', tab.id);
+    if (focus) tab.focus();
+    const name = tab.dataset.tab, src = `assets/img/${name}.png`;
+    shot.classList.add('swap');
+    setTimeout(() => {
+      shot.hidden = false; note.hidden = true; shot.src = src;
+      shot.alt = `${tab.textContent} do Nullwaves Prontuário`;
+      shot.classList.remove('swap');
+    }, reduce ? 0 : 180);
+  };
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', e => {
+      const k = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+      if (k) { e.preventDefault(); select(tabs[(i + k + tabs.length) % tabs.length], true); }
+      if (e.key === 'Home') { e.preventDefault(); select(tabs[0], true); }
+      if (e.key === 'End') { e.preventDefault(); select(tabs[tabs.length - 1], true); }
+    });
+  });
 
   // Formulário: sem backend, abre o e-mail do usuário já preenchido
   const form = $('[data-form]'), out = $('.form-note');
   form.addEventListener('submit', e => {
     e.preventDefault();
+    $$('input,textarea', form).forEach(f => f.setAttribute('aria-invalid', !f.checkValidity()));
     if (!form.checkValidity()) { out.textContent = 'Preencha nome, e-mail válido e mensagem.'; form.reportValidity(); return; }
     const d = new FormData(form);
     const body = `${d.get('msg')}\n\n— ${d.get('nome')} (${d.get('email')})`;
     location.href = `mailto:contato@nullwaves.systems?subject=${encodeURIComponent(d.get('assunto'))}&body=${encodeURIComponent(body)}`;
-    out.textContent = 'Abrimos seu aplicativo de e-mail para finalizar o envio.';
+    out.textContent = 'Abrimos seu aplicativo de e-mail. Finalize o envio por lá.';
   });
 
   // Animações (GSAP)
@@ -81,8 +129,14 @@
     scrollTrigger: { trigger: st, start: 'top 80%', end: 'bottom 45%', scrub: true } });
 
   // Entradas discretas só onde ajudam
-  gsap.from('.caps article', { y: 30, opacity: 0, duration: .8, stagger: .1, ease: 'power2.out',
-    scrollTrigger: { trigger: '.caps', start: 'top 80%', once: true } });
+  $$('.caps').forEach(c => gsap.from($$('article', c), { y: 30, opacity: 0, duration: .8, stagger: .1, ease: 'power2.out',
+    scrollTrigger: { trigger: c, start: 'top 80%', once: true } }));
+
+  // Como trabalhamos: a linha se desenha e as etapas surgem em sequência
+  const sw = $('.steps-wrap');
+  gsap.fromTo(sw, { '--p': 0 }, { '--p': 1, ease: 'none', scrollTrigger: { trigger: sw, start: 'top 75%', end: 'bottom 70%', scrub: true } });
+  gsap.from($$('.steps li'), { y: 24, opacity: 0, duration: .7, stagger: .15, ease: 'power2.out',
+    scrollTrigger: { trigger: sw, start: 'top 80%', once: true } });
   $$('.product').forEach(p => gsap.from(p.children, { y: 30, opacity: 0, duration: .9, stagger: .15, ease: 'power2.out',
     scrollTrigger: { trigger: p, start: 'top 80%', once: true } }));
 })();
